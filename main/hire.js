@@ -17,6 +17,7 @@ import {
     Icon, 
     Separator,
     Button } from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -42,6 +43,9 @@ export default class Hire extends Component {
     render() {
       return (
           <Container>
+              <ScrollView>
+
+              
              <Container style={{height: 400, marginBottom: 10}}> 
         <Content >
       
@@ -129,6 +133,7 @@ export default class Hire extends Component {
 
        
       </Container>
+      </ScrollView>
 
        <Fab style={{backgroundColor: '#66cd00'}} onPress={() => this.props.navigation.navigate('UploadJob')}>
    
