@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Dimensions, View, Text, StyleSheet, Button, Image} from 'react-native';
 import {Root} from 'native-base';
 import Icon from '@expo/vector-icons/Ionicons';
+// import Login from './Login';
 import Progress from './main/progress';
 import Profile from './main/profile';
 import Search from './main/search';
@@ -19,7 +20,8 @@ import HireProgress from './screen/HireProgess';
 import UploadJob from './screen/UploadJob';
 import UploadSuccess from './screen/UploadSuccess';
 import MyJob from './drawer/myorder';
-import PaidNow from './screen/paidNow';
+//import PaidNow from './screen/paidNow';
+import PaidNow from './screen/PaidNow';
 import JobSettings from './screen/JobSettings';
 import PaymentMethod from './screen/PaymentMethod';
 
@@ -77,13 +79,14 @@ class WelcomeScreen extends Component {
         <Button 
           title="Login"
           style={{height:20, borderRadius: 25}}
-          onPress={() => this.props.navigation.navigate('Dashboard')}
+          onPress={() => this.props.navigation.navigate('Dashboard')}    
         />
-        {/* <Button title="Sign Up" onPress={() => alert('button pressed')} /> */}
+        {/* <Button title="Sign Up" onPress={() => alert('button pressed')} /> Dashboard */}
       </View>
     );
   }
 }
+
 
 
 
@@ -117,6 +120,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
 );
 const DashboardStackNavigator = createStackNavigator(
   {
+    // Login: Login,
     DashboardTabNavigator: DashboardTabNavigator,
     PaymentDetails:PaymentDetails,
     SearchDetails: SearchDetails,

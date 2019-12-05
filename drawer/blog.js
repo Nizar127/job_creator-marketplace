@@ -21,28 +21,135 @@ export default class Blog extends React.Component {
             <Container>
               <Content>
                  <Separator>
+                   
+                   <Icon name="arrow-back" style={{marginStart: 3, marginEnd: 10}} onPress={() => this.props.navigation.goBack()}/>
                     <Text style={{fontSize: 20, justifyContent: 'center'}}>BLOG</Text>           
                   </Separator>           
-            <Card>
-          <CardItem header bordered>
-              <Text>Backend Development</Text>
-          </CardItem>
-            <CardItem bordered>
-                <Left>
-                    <Thumbnail source={require('../img/kambing.jpg')}/>
-                <Body>
-                    <Text>Hassan</Text>
-                    <Text note>Firebase</Text>
-                    <Text note>Build Realtime Database System</Text>
-                </Body>
-                </Left>       
-                <Right>
-                    <Button success>
-                        <Text>Hire</Text>
-                    </Button>
-                </Right>
+                  <Card>
+            <CardItem cardBody>
+              <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+            <Body>
+                  <Text>Catering Services</Text>
+                  <Text note>Global Ventures Industies</Text>
+                
+              </Body>
+            </CardItem>
+              <CardItem>
+                  <Text>This works well somehow</Text>
+               </CardItem>
+             <CardItem style={{justifyContent: 'center'}}>
+              
+                  <Button rounded primary onPress={() => this.props.navigation.navigate('JobHome')} >
+                        <Text>Book Now</Text>
+                    </Button>  
+                        
+              
+
              </CardItem>
-           </Card>
+
+          </Card>
+          <Card>
+            <CardItem cardBody>
+              <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+            <Body>
+                  <Text>Catering Services</Text>
+                  <Text note>Global Ventures Industies</Text>
+                
+              </Body>
+            </CardItem>
+              <CardItem>
+                  <Text>This works well somehow</Text>
+               </CardItem>
+             <CardItem style={{justifyContent: 'center'}}>
+              
+                  <Button rounded primary onPress={() => this.props.navigation.navigate('JobHome')} >
+                        <Text>Book Now</Text>
+                    </Button>  
+                        
+              
+
+             </CardItem>
+
+          </Card>
+          <Card>
+            <CardItem cardBody>
+              <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+            <Body>
+                  <Text>Catering Services</Text>
+                  <Text note>Global Ventures Industies</Text>
+                
+              </Body>
+            </CardItem>
+              <CardItem>
+                  <Text>This works well somehow</Text>
+               </CardItem>
+             <CardItem style={{justifyContent: 'center'}}>
+              
+                  <Button rounded primary onPress={() => this.props.navigation.navigate('JobHome')} >
+                        <Text>Details</Text>
+                    </Button>  
+                        
+              
+
+             </CardItem>
+
+          </Card>
+          <Card>
+            <CardItem cardBody>
+              <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+            <Body>
+                  <Text>Catering Services</Text>
+                  <Text note>Global Ventures Industies</Text>
+                
+              </Body>
+            </CardItem>
+              <CardItem>
+                  <Text>This works well somehow</Text>
+               </CardItem>
+             <CardItem style={{justifyContent: 'center'}}>
+              
+                  <Button rounded primary onPress={() => this.props.navigation.navigate('JobHome')} >
+                        <Text>Details</Text>
+                    </Button>  
+                        
+              
+
+             </CardItem>
+
+          </Card>
+          <Card>
+            <CardItem cardBody>
+              <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+            <Body>
+                  <Text>Catering Services</Text>
+                  <Text note>Global Ventures Industies</Text>
+                
+              </Body>
+            </CardItem>
+              <CardItem>
+                  <Text>This works well somehow</Text>
+               </CardItem>
+             <CardItem style={{justifyContent: 'center'}}>
+              
+                  <Button rounded primary onPress={() => this.props.navigation.navigate('JobHome')} >
+                        <Text>Details</Text>
+                    </Button>  
+                        
+              
+
+             </CardItem>
+
+          </Card>
            </Content>
             </Container>
         </ScrollView>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { removeStudent } from '../services/DataService';
-import { Alert } from 'react-native';
-import { Container, Content, Footer, FooterTab, Button, Icon, Text, List } from 'native-base';
+import { Alert, View } from 'react-native';
+import { Container, Content, Footer, FooterTab, Button, Icon, Text, List, Header } from 'native-base';
 import { db } from '../config/firebase';
 import JobList from '../components/JobList';
 
@@ -41,6 +41,11 @@ export default class MyJob extends Component {
   render() {
     return (
       <Container>
+         <Header>
+            <View style={{marginTop:25, marginEnd: 350}}>
+              <Icon style={{color:'white'}} name="md-menu" onPress={()=>this.props.navigation.openDrawer()}/>
+            </View>
+       </Header>
 
         <Content padder>
         <Text style={{textAlign: "center", height: 40, fontWeight: "bold", marginTop: 20}}>Job List</Text>

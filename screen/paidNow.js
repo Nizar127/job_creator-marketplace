@@ -42,7 +42,7 @@ export default class PaidNow extends React.Component {
                     <Text>Mockup Design</Text>
                     <Text>System Development</Text>
                     <Text>Contract</Text>
-                    <Text>Build a Application Wireframing</Text>
+                    <Text>Build a Backend</Text>
                     <Text>20th August 2020</Text>
                     <Text>30th August 2020</Text>
                     <Text>10 Days</Text>
@@ -53,18 +53,25 @@ export default class PaidNow extends React.Component {
                </Right>
             </CardItem>
             <CardItem>
-                <Text>REPORT AN ISSUE</Text>
-                <Icon active name="arrow-forward"/>
+                <Left><Text>REPORT AN ISSUE</Text></Left>
+                <Right><Icon active name="arrow-forward"/></Right>
             </CardItem>
             <CardItem footer bordered>
-                  <Button success onPress={() => this.props.navigation.navigate('UploadSuccess')} rounded style={{padding: 5, justifyContent:'center', height: 20}}>
-                        <Text style={{fontWeight: 'bold', fontSize: 20}}>PAID NOW</Text>
+                  <Button success onPress={() => this.props.navigation.navigate('UploadSuccess')} rounded style={{justifyContent:'center', height: 20}}>
+                        <Text style={{fontWeight: 'bold', fontSize: 20, padding: 6, color: 'white'}}>PAID NOW</Text>
                 </Button>
             </CardItem>
                 
         
             
            </Card>
+
+           <View>
+             <Button danger onPress={() => this.props.navigation.goBack()}>
+                <Icon name="arrow-back"/>
+                <Text>Go Back</Text>
+             </Button>
+           </View>
 
     </Container>
           

@@ -60,7 +60,7 @@ export default class PaymentDetails extends React.Component {
                     <Button danger transparent>
                         <Text style={{fontWeight: 'bold'}}>UNPAID</Text>
                     </Button>
-                    <Button rounded onPress={() => this.props.navigation.navigate('paidNow')}> 
+                    <Button rounded onPress={() => this.props.navigation.navigate('PaidNow')}> 
                         <Text style={{fontWeight: 'bold'}}>PAID NOW</Text>
                     </Button>
                 </Right>
@@ -90,7 +90,7 @@ export default class PaymentDetails extends React.Component {
                         <Text style={{fontWeight: 'bold'}}>UNPAID</Text>
                     </Button>
                     <Button rounded onPress={() => this.props.navigation.navigate('paidNow')}> 
-                        <Text style={{fontWeight: 'bold'}}>PAID NOW</Text>
+                        <Text style={{fontWeight: 'bold', color:'white'}}>PAID NOW</Text>
                     </Button>
                 </Right>
              </CardItem>

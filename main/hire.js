@@ -46,7 +46,7 @@ export default class Hire extends Component {
               <ScrollView>
 
               
-             <Container style={{height: 400, marginBottom: 10}}> 
+             <Container> 
         <Content >
       
           <Separator>

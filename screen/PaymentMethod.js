@@ -19,7 +19,7 @@ export default class PaymentMethod extends React.Component {
         <Content>
       <List>
         <ListItem>
-          <Text>Credit Card</Text>
+          <Left><Text>Credit Card</Text></Left>
           
           <Right>
           <Right>
@@ -28,21 +28,21 @@ export default class PaymentMethod extends React.Component {
         </Right>
         </ListItem>
         <ListItem>
-          <Text>Cash</Text>
+          <Left><Text>Cash</Text></Left>
           
           <Right>
                  <Radio selected={false} />      
               </Right>
         </ListItem>
         <ListItem>
-          <Text>Cheque</Text>
+          <Left><Text>Cheque</Text></Left>
           
           <Right>
                  <Radio selected={false} />      
               </Right>
         </ListItem>
         <ListItem>
-          <Text>Online Transfer</Text>
+          <Left><Text>Online Transfer</Text></Left>
           
           <Right>
                  <Radio selected={true} />      

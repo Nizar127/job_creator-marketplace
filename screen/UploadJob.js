@@ -39,38 +39,41 @@ export default class UploadJob extends Component {
         };
         this.state = { chosenDate: new Date() };
         this.setDate = this.setDate.bind(this);
+        this.selectWorkType = this.selectWorkType.bind(this);
       }
   
       setJobName = (value) => {
-        this.setState=({jobname:value});
+        this.setState({jobname:value})
+        console.log(this.state.jobname);
       }
 
       setJobDesc = (value) => {
-        this.setState=({jobdesc:value});
+        this.setState({jobdesc:value})
       }
 
       selectWorkType = (value) => {
-        this.setState=({worktype:value});
+        this.setState({worktype:value
+        }),()=>console.log(this.state.worktype)
       }
 
       setSalary = (value) => {
-        this.setState=({salary:value});
+        this.setState({salary:value})
       }
 
       setPeopleNum = (value) => {
-        this.setState=({peoplenum:value});
+        this.setState({peoplenum:value})
       }
 
       selectTime = (value) => {
-        this.setState=({time:value});
+        this.setState({time:value})
       }
 
       setDate(newDate) {
-        this.setState({ chosenDate: newDate });
+        this.setState({ chosenDate: newDate })
       }
 
       setLocation = (value) => {
-        this.setState=({location:value});
+        this.setState({location:value})
       }
 
       saveData = () =>{
@@ -110,7 +113,7 @@ export default class UploadJob extends Component {
           placeholderStyle={{ color: "#bfc6ea" }}
           placeholderIconColor="#007aff"
           selectedValue={this.state.worktype}
-          onValueChange={this.selectWorkType}
+          onValueChange={this.selectWorkType.bind(this)}
           Title="Work Type"
           >
             <Picker.Item label="Urgent" value="Urgent" />
@@ -163,7 +166,7 @@ export default class UploadJob extends Component {
             
         <Footer>
           <FooterTab>
-          <Button vertical onPress={() => {this.props.navigation.navigate('hire')}}>
+          <Button vertical onPress={() => this.props.navigation.navigate('hire')}>
               <Icon name="home" />
               <Text>Home</Text>
             </Button>
