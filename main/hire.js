@@ -68,7 +68,7 @@ export default class Hire extends Component {
                 </Body>
                 </Left>       
                 <Right>
-                    <Button success onPress={() => this.props.navigation.navigate('HireDetails')}>
+                    <Button success onPress={() => this.props.navigation.navigate('HireOverview')}>
 
                         <Text>Hire</Text>
                     </Button>

@@ -3,8 +3,10 @@ import {StyleSheet, Text, List, View, Slider, ScrollView, Image, Alert} from 're
 import { Container, Tab, Tabs, TabHeading, Card, CardItem, Header, Left, Body, Thumbnail, Right, Button, Icon, Title, Segment, Content, Item} from 'native-base';
 import WorkerHome from '../tab/searchHome';
 import WorkerDetails from '../tab/searchDetails';
+import UserProfile from '../screen/UserProfile';
+import HireDetails from '../screen/HireDetails';
 
-export default class SearchDetails extends React.Component {
+export default class HireOverview extends React.Component {
 
 
 
@@ -16,17 +18,15 @@ export default class SearchDetails extends React.Component {
         
            {/* <Header hasTabs /> */}
          
-             <View>
-               <Icon name="arrow-back" onPress={() => this.props.navigation.goBack()}/>
-             </View>
+             
          
-           <Tabs style={{fontColor: '#0000ff',backgroundColor: '#dcedc1', color: 'white'}}>
+           <Tabs style={{fontColor: '#0000ff',backgroundColor: '#dcedc1'}}>
    
-             <Tab  heading={ <TabHeading><Text style={{color:'black', fontWeight:'bold'}}>Home</Text></TabHeading>}>
-               <WorkerHome/>
+             <Tab heading={ <TabHeading><Text style={{color:'white'}}>Home</Text></TabHeading>}>
+               <HireDetails/>
              </Tab>
-             <Tab heading={ <TabHeading><Text style={{color:'black', fontWeight:'bold'}}>Job Details</Text></TabHeading>}>    
-               <WorkerDetails/>
+             <Tab heading={ <TabHeading><Text style={{color: 'white'}}>Details</Text></TabHeading>}>    
+               <UserProfile/>
              </Tab>
             
            </Tabs>

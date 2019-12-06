@@ -26,11 +26,11 @@ export default class HireDetails extends Component {
   
     render() {
       return (
-          <Container>
-<ScrollView>
-            <Card >
-                <CardItem style={{alignItems: 'stretch', height: 350, width: auto}}>
-                     <Image source={require('../img/koe.jpeg')} style={{height: 300, width: auto}}/>
+          <Container style={{flex:1,marginTop: 20}}>
+        <ScrollView>
+            <Card>
+                <CardItem style={{alignItems: 'stretch', height: 350}}>
+                     <Image source={require('../img/kambing.jpg')} style={{height: 200, width: null, flex: 1}}/>
                 </CardItem> 
                  <CardItem>   
                      <Text style={{marginTop: 5, marginBottom: 5}}>Creative World Industries</Text>
