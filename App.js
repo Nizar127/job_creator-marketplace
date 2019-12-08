@@ -32,7 +32,7 @@ import JobSettings from './screen/JobSettings';
 import PaymentMethod from './screen/PaymentMethod';
 import HireOverview from './screen/HireOverview';
 import ViewCalendar from './screen/ViewCalendar';
-
+import MyOrderDetail from './screen/MyOrderDetail';
 
 
 import {
@@ -200,8 +200,8 @@ const DashboardStackNavigator = createStackNavigator(
     JobSettings: JobSettings,
     PaidNow: PaidNow,
     HireOverview: HireOverview,
-    ViewCalendar: ViewCalendar
-    
+    ViewCalendar: ViewCalendar,
+    MyOrderDetail: MyOrderDetail
   },
   {
     defaultNavigationOptions: ({ navigation }) => {

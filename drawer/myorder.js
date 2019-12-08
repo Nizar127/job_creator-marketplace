@@ -52,9 +52,11 @@ export default class MyJob extends Component {
         <List vertical={true}>
         <JobList jobs={this.state.jobs}  />
         </List>
-        <Text>{this.props.salary}</Text>
+        <Text>{this.state.salary}</Text>
         </Content>
-  
+
+
+
         <Footer>
           <FooterTab>
             <Button vertical onPress={() => {this.props.navigation.navigate('UploadJob')}}>
