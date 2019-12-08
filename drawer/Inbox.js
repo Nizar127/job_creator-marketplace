@@ -13,7 +13,7 @@ const navigate = createStackNavigator({
     Chat: {screen: Chat},
 })
 
-class navigator extends Component {
+export default class Inbox extends Component {
     render() {
       return (
          <AppContainer />
@@ -34,4 +34,3 @@ class navigator extends Component {
 // }
 const AppContainer = createAppContainer(navigate);
 
-export default navigator;

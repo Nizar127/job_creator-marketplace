@@ -2,7 +2,6 @@ import { db } from '../config/firebase';
 
 export const addJob =  (jobname, jobdesc, worktype, salary, peoplenum, chosenDate, location) => {
     db.ref('/Job').push({
-        
         jobname: jobname,
         jobdesc: jobdesc,
         worktype: worktype,

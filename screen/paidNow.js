@@ -12,7 +12,7 @@ export default class PaidNow extends React.Component {
       return (
     <Container>
             <View>
-             <Button danger onPress={() => this.props.navigation.goBack()}>
+             <Button style={{flex:3}} danger onPress={() => this.props.navigation.goBack()}>
                 <Icon name="arrow-back"/>
                 <Text>Go Back</Text>
              </Button>

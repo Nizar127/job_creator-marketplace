@@ -255,7 +255,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: Payment
   },
   Inbox:{
-    screen: Payment
+    screen: Inbox
   },
   History:{
     screen: History

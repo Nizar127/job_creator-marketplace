@@ -74,7 +74,7 @@ export default class UserProfile extends Component {
                      </CardItem>
                      <CardItem style={{justifyContent: 'center', margin: 30}}>
                      <Button rounded 
-                      onPress={() => this.props.navigation.navigate('ViewCalendar')}
+                      onPress={() => this.props.navigation.navigate('./ViewCalendar')}
                      style={{
                          backgroundColor: '#f5f5f5',
                          color: 'black',
