@@ -7,7 +7,7 @@ import {db, auth, storage} from './config/firebase';
 
 
 // import Login from './Login';
-import Loading from './screen/Loading';
+//import Loading from './screen/Loading';
 import Login from './screen/Login';
 import Progress from './main/progress';
 import Profile from './main/profile';
@@ -278,7 +278,7 @@ const AppDrawerNavigator = createDrawerNavigator({
 
 
 const AppSwitchNavigator = createSwitchNavigator({
-  Loading: { screen: Loading},
+  //Loading: { screen: Loading},
    Login: { screen: Login},
   Welcome: { screen: WelcomeScreen },
   Dashboard: { screen: AppDrawerNavigator },

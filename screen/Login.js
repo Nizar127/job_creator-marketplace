@@ -49,7 +49,7 @@ export default class Login extends Component {
   }
 
 
-  signUpUser = (email, password) => {
+  signUpUser = () => {
 
     try {
 
@@ -58,18 +58,18 @@ export default class Login extends Component {
             return;
         }
 
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
     }
     catch (error) {
         console.log(error.toString())
     }
 }
 
-loginUser = (email, password) => {
+loginUser = () => {
 
     try {
 
-        auth.signInWithEmailAndPassword(email, password).then(function (user) {
+        auth.signInWithEmailAndPassword(this.state.email, this.state.password).then(function (user) {
             
         })
         this.props.navigation.navigate('Dashboard');

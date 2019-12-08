@@ -22,7 +22,7 @@ export default class JobList extends Component {
         return(
           <ListItem key={index}>
           <Left>
-          <Text>{data.name}</Text>
+          <Text>{data.jobname}</Text>
           </Left>
           <Right>
           <Icon name="arrow-forward" />

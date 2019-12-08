@@ -1,7 +1,7 @@
 import { db } from '../config/firebase';
 
 export const addJob =  (jobname, jobdesc, worktype, salary, peoplenum, chosenDate, location) => {
-    db.ref('/Job').child(salary).set({
+    db.ref('/Job').push({
         jobname: jobname,
         jobdesc: jobdesc,
         worktype: worktype,
@@ -9,7 +9,7 @@ export const addJob =  (jobname, jobdesc, worktype, salary, peoplenum, chosenDat
         peoplenum: peoplenum,
         chosenDate: chosenDate,
         location: location 
-    }, () => this.props.navigation.navigate('myorder'));
+    }, () => this.props.navigation.navigate('UploadSuccess'));
 }
 
 // export const updateStudent =  (name, matricno, major, year, status) => {

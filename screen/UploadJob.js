@@ -1,29 +1,29 @@
 import React, {Component} from 'react';
 import {StyleSheet, ScrollView, Image, TextInput, Alert} from 'react-native';
-import { 
-    Container, 
-    Header, 
-    Content, 
-    View, 
+import {
+    Container,
+    Header,
+    Content,
+    View,
     Form,
-    Item, 
-    Input, 
+    Item,
+    Input,
     Label,
     Card,  
-    Right, 
-    auto, 
+    Right,
+    auto,
     CardItem,
-    Thumbnail, 
-    Text, 
+    Thumbnail,
+    Text,
    Picker,
    DatePicker,
    Footer,
    Icon,
    FooterTab,
     Button } from 'native-base';
-import {addJob} from '../service/DataService'; 
-
-
+import {addJob} from '../service/DataService';
+ 
+ 
 export default class UploadJob extends Component {
     constructor() {
         super();
@@ -35,47 +35,58 @@ export default class UploadJob extends Component {
           peoplenum: null,
           time:0,
           location: null
-
+ 
         };
         this.state = { chosenDate: new Date() };
         this.setDate = this.setDate.bind(this);
         this.selectWorkType = this.selectWorkType.bind(this);
+        this.testData = this.testData.bind(this);
+        this.saveData = this.saveData.bind(this);
       }
-  
+ 
       setJobName = (value) => {
         this.setState({jobname:value})
-        console.log(this.state.jobname);
       }
-
+ 
       setJobDesc = (value) => {
         this.setState({jobdesc:value})
       }
-
+ 
       selectWorkType = (value) => {
         this.setState({worktype:value
-        }),()=>console.log(this.state.worktype)
+        })
       }
-
+ 
       setSalary = (value) => {
         this.setState({salary:value})
       }
-
+ 
       setPeopleNum = (value) => {
         this.setState({peoplenum:value})
       }
-
+ 
       selectTime = (value) => {
         this.setState({time:value})
       }
-
+ 
       setDate(newDate) {
         this.setState({ chosenDate: newDate })
       }
-
+ 
       setLocation = (value) => {
         this.setState({location:value})
       }
-
+ 
+      testData (){
+        if(this.state.worktype){
+          console.log(this.state.worktype)
+        }
+        else {
+          Alert.alert('Please enter type of work')
+        }
+       
+      }
+ 
       saveData = () =>{
         if(this.state.jobname && this.state.jobdesc && this.state.worktype && this.state.salary && this.state.peoplenum && this.state.chosenDate && this.state.location){
           if(isNaN(this.state.salary)){
@@ -83,12 +94,13 @@ export default class UploadJob extends Component {
           }
            else{
              addJob(this.state.jobname, this.state.jobdesc, this.state.worktype, this.state.salary, this.state.peoplenum, this.state.chosenDate, this.state.location);
+             
            }
         } else{
            Alert.alert('Status','Empty Field(s)!');
         }
       }
-  
+ 
     render() {
       return (
           <Container>
@@ -105,8 +117,8 @@ export default class UploadJob extends Component {
         </Item>
         <Item fixedLabel picker last>
           <Label>Work Type</Label>
-          <Picker 
-          mode="dropdown" 
+          <Picker
+          mode="dropdown"
           iosIcon={<Icon name="ios-arrow-down-outline" />}
           style={{ width: undefined }}
           placeholder="Select Major"
@@ -116,23 +128,24 @@ export default class UploadJob extends Component {
           onValueChange={this.selectWorkType.bind(this)}
           Title="Work Type"
           >
+            <Picker.Item label="Select Work Type" value={null} />
             <Picker.Item label="Urgent" value="Urgent" />
             <Picker.Item label="Contract" value="Contract" />
             <Picker.Item label="Milestones" value="Milestones" />
             <Picker.Item label="Hire As You Need" value="HireNeed" />
           </Picker>
         </Item>
-
+ 
         <Item fixedLabel last>
               <Label>Salary</Label>
               <Input onChangeText={this.setSalary} />
         </Item>
-
+ 
         <Item fixedLabel last>
               <Label>Number of People</Label>
               <Input onChangeText={this.setPeopleNum} />
         </Item>
-
+ 
         <DatePicker
             defaultDate={new Date(2019, 4, 4)}
             minimumDate={new Date(2019, 1, 1)}
@@ -151,19 +164,19 @@ export default class UploadJob extends Component {
             <Text>
               Date: {this.state.chosenDate.toString().substr(4, 12)}
             </Text>
-
+ 
             <Item fixedLabel last>
               <Label>Location</Label>
               <Input onChangeText={this.setLocation} />
         </Item>
-
+ 
         </Form>
-
+ 
           <Button block success last style={{marginTop: 50}} onPress={this.saveData}>
             <Text style={{fontWeight: "bold"}}>Hire Now</Text>
           </Button>
         </Content>
-            
+           
         <Footer>
           <FooterTab>
           <Button vertical onPress={() => this.props.navigation.navigate('hire')}>
@@ -173,12 +186,12 @@ export default class UploadJob extends Component {
           </FooterTab>
         </Footer>
          </Container>
-
-            
+ 
+           
       );
     }
   }
-  
+ 
   const styles = StyleSheet.create({
     button: {
       backgroundColor: 'white',
