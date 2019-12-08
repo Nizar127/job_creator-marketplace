@@ -21,67 +21,20 @@ import {
     Tab,
     TabHeading,
     Button } from 'native-base';
-
+    var BUTTONS = [
+      { text: "Urgent", icon: "american-football", iconColor: "#2c8ef4" },
+      { text: "Part Time", icon: "analytics", iconColor: "#f42ced" },
+      { text: "Contract", icon: "aperture", iconColor: "#ea943b" },
+      { text: "Per KPI", icon: "aperture", iconColor: "#ea943b" },
+      { text: "Hire As You Need", icon: "aperture", iconColor: "#ea943b" },
+    ];
+    
 
 export default class UserProfile extends Component {
-  
-    // renderTabs() {
-    //     const { filters } = this.props;
-    
-    //     return (
-    //       <View style={styles.tabs}>
-    //         <View
-    //           style={[
-    //             styles.tab,
-    //             filters.type === 'all' ? styles.activeTab : null
-    //           ]}
-    //         >
-    //           <Text
-    //             style={[
-    //               styles.tabTitle,
-    //               filters.type === 'all' ? styles.activeTabTitle : null
-    //             ]}
-    //             onPress={() => this.handleTab('all')}
-    //           >
-    //             All Spots
-    //           </Text>
-    //         </View>
-    //         <View
-    //           style={[
-    //             styles.tab,
-    //             filters.type === 'tent' ? styles.activeTab : null
-    //           ]}
-    //         >
-    //           <Text
-    //             style={[
-    //               styles.tabTitle,
-    //               filters.type === 'tent' ? styles.activeTabTitle : null
-    //             ]}
-    //             onPress={() => this.handleTab('tent')}
-    //           >
-    //             Tenting
-    //           </Text>
-    //         </View>
-    //         <View
-    //           style={[
-    //             styles.tab,
-    //             filters.type === 'rv' ? styles.activeTab : null
-    //           ]}
-    //         >
-    //           <Text
-    //             style={[
-    //               styles.tabTitle,
-    //               filters.type === 'rv' ? styles.activeTabTitle : null
-    //             ]}
-    //             onPress={() => this.handleTab('rv')}
-    //           >
-    //             RV Camping
-    //           </Text>
-    //         </View>
-    //       </View>
-    //     )
-    //   }
-
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
     render() {
       return (
           
@@ -94,7 +47,16 @@ export default class UserProfile extends Component {
                         Profile
                     </Text>
                     <Right style={{ marginTop: 10}}>
-                        <Button success onPress={() => this.props.navigation.navigate('job')}>
+                        <Button success onPress={() =>
+                           ActionSheet.show(
+                           {
+                              options: BUTTONS,
+                               title: "Please Pick Your Work Requirement"
+                           },
+                            buttonIndex => {
+                                this.setState({ clicked: BUTTONS[buttonIndex] });
+                             }
+                            )}>
                             <Text>REQUEST</Text>
                         </Button>
 
@@ -112,7 +74,7 @@ export default class UserProfile extends Component {
                      </CardItem>
                      <CardItem style={{justifyContent: 'center', margin: 30}}>
                      <Button rounded 
-                      onPress={() => this.props.navigation.navigate('addjob')}
+                      onPress={() => this.props.navigation.navigate('ViewCalendar')}
                      style={{
                          backgroundColor: '#f5f5f5',
                          color: 'black',

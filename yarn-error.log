@@ -1,0 +1,64 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add native-base --save
+
+PATH: 
+  C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Users\User\AppData\Local\Android\Sdk\platform-tools;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Ruby26-x64\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\User\AppData\Local\Yarn\bin;C:\Users\User\AppData\Roaming\npm;c:\Users\User\AppData\Local\Android\Sdk\platform-tools;
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  12.5.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\User\get_job_creator\node_modules\@expo\react-native-action-sheet\node_modules\hoist-non-react-statics\dist'
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "expo": "^35.0.0",
+      "expo-font": "^7.0.0",
+      "expo-permissions": "^7.0.0",
+      "express": "^4.17.1",
+      "express-graphql": "^0.9.0",
+      "firebase": "^7.5.0",
+      "moment": "^2.24.0",
+      "native-base": "^2.13.8",
+      "prop-types": "^15.7.2",
+      "react": "16.8.3",
+      "react-dom": "16.8.3",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+      "react-native-calendars": "^1.214.0",
+      "react-native-gesture-handler": "^1.5.2",
+      "react-native-gifted-chat": "^0.9.11",
+      "react-native-ignore-warnings": "^0.1.1",
+      "react-native-progress": "^4.0.2",
+      "react-native-reanimated": "^1.4.0",
+      "react-native-web": "^0.11.7",
+      "react-navigation": "^4.0.10",
+      "react-navigation-drawer": "^2.3.3",
+      "react-navigation-stack": "^1.10.3",
+      "react-navigation-tabs": "^2.6.2"
+    },
+    "devDependencies": {
+      "babel-preset-expo": "^7.1.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

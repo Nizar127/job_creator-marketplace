@@ -11,6 +11,12 @@ export default class PaidNow extends React.Component {
      
       return (
     <Container>
+            <View>
+             <Button danger onPress={() => this.props.navigation.goBack()}>
+                <Icon name="arrow-back"/>
+                <Text>Go Back</Text>
+             </Button>
+           </View>
              <Card>
           <CardItem header bordered>
               <Text>Backend Development</Text>
@@ -66,12 +72,7 @@ export default class PaidNow extends React.Component {
             
            </Card>
 
-           <View>
-             <Button danger onPress={() => this.props.navigation.goBack()}>
-                <Icon name="arrow-back"/>
-                <Text>Go Back</Text>
-             </Button>
-           </View>
+
 
     </Container>
           

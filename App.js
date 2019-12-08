@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { Dimensions, View, Text, StyleSheet, Image} from 'react-native';
 import {Root, Container, Content, Header, Form, Label, Input, Item, Button} from 'native-base';
 import Icon from '@expo/vector-icons/Ionicons';
-import {db} from './config/firebase';
+//import {db} from './config/firebase';
+import {db, auth, storage} from './config/firebase';
+
 
 // import Login from './Login';
+import Loading from './screen/Loading';
+import Login from './screen/Login';
 import Progress from './main/progress';
 import Profile from './main/profile';
 import Search from './main/search';
@@ -27,6 +31,7 @@ import PaidNow from './screen/PaidNow';
 import JobSettings from './screen/JobSettings';
 import PaymentMethod from './screen/PaymentMethod';
 import HireOverview from './screen/HireOverview';
+import ViewCalendar from './screen/ViewCalendar';
 
 
 
@@ -47,13 +52,11 @@ ignoreWarnings('Setting a timer');
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = { loading: true};
-    this.state = ({
-      email: '',
-      password: ''
-  })
+    this.state = { loading: true};   
+
   }
-  
+
+
   async componentWillMount() {
     await Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
@@ -62,36 +65,8 @@ class App extends Component {
     this.setState({ loading: false });
   }
 
-  signUpUser = (email, password) => {
 
-    try {
 
-        if (this.state.password.length < 6) {
-            alert("Please enter atleast 6 characters")
-            return;
-        }
-
-        db.auth().createUserWithEmailAndPassword(email, password)
-    }
-    catch (error) {
-        console.log(error.toString())
-    }
-}
-
-loginUser = (email, password) => {
-
-    try {
-
-        db.auth().signInWithEmailAndPassword(email, password).then(function (user) {
-            console.log(user)
-
-        })
-        this.props.navigation.navigate('Dashboard');
-    }
-    catch (error) {
-        console.log(error.toString())
-    }
-}
 
   render() {
     if (this.state.loading){
@@ -117,56 +92,65 @@ export default App;
 class WelcomeScreen extends Component {
   render() {
     return (
-      <Container style={styles.container}>
-      <Form>
-          <Item floatingLabel>
-              <Label>Email</Label>
-              <Input
-                  autoCorrect={false}
-                  autoCapitalize="none"
-                  onChangeText={(email) => this.setState({ email })}
-              />
+  //     <Container style={styles.container}>
+  //     <Form>
+  //         <Item floatingLabel>
+  //             <Label>Email</Label>
+  //             <Input
+  //                 autoCorrect={false}
+  //                 autoCapitalize="none"
+  //                 onChangeText={(email) => this.setState({ email })}
+  //             />
 
-          </Item>
+  //         </Item>
 
-          <Item floatingLabel>
-              <Label>Password</Label>
-              <Input
-                  secureTextEntry={true}
-                  autoCorrect={false}
-                  autoCapitalize="none"
-                  onChangeText={(password) => this.setState({ password })}
-              />
-          </Item>
+  //         <Item floatingLabel>
+  //             <Label>Password</Label>
+  //             <Input
+  //                 secureTextEntry={true}
+  //                 autoCorrect={false}
+  //                 autoCapitalize="none"
+  //                 onChangeText={(password) => this.setState({ password })}
+  //             />
+  //         </Item>
 
-          <Button style={{ marginTop: 10 }}
-              full
-              rounded
-              success
-              onPress={() => this.loginUser(this.state.email, this.state.password)}
-          >
-              <Text style={{ color: 'white' }}> Login</Text>
-          </Button>
+  //         <Button style={{ marginTop: 10 }}
+  //             full
+  //             rounded
+  //             success
+  //             onPress={() => this.loginUser()}
+  //         >
+  //             <Text style={{ color: 'white' }}> Login</Text>
+  //         </Button>
 
-          <Button style={{ marginTop: 10 }}
-              full
-              rounded
-              primary
-              onPress={() => this.signUpUser(this.state.email, this.state.password)}
-          >
-              <Text style={{ color: 'white' }}> Sign Up</Text>
-          </Button>
+  //         <Button style={{ marginTop: 10 }}
+  //             full
+  //             rounded
+  //             primary
+  //             onPress={() => this.signUpUser()}
+  //         >
+  //             <Text style={{ color: 'white' }}> Sign Up</Text>
+  //         </Button>
 
-      </Form>
-  </Container>
-      // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      //   <Button 
-      //     title="Login"
-      //     style={{height:20, borderRadius: 25}}
-      //     onPress={() => this.props.navigation.navigate('Dashboard')}    
-      //   />
-      //   {/* <Button title="Sign Up" onPress={() => alert('button pressed')} /> Dashboard */}
-      // </View>
+  //         <Button style={{ marginTop: 10 }}
+  //             full
+  //             rounded
+  //             primary
+  //             onPress={() => this.props.navigation.navigate('Dashboard')}
+  //         >
+  //             <Text style={{ color: 'white' }}> Skip to Dashboard</Text>
+  //         </Button>
+
+  //     </Form>
+  // </Container>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+         <Button 
+           title="Login"
+           style={{height:20, borderRadius: 25}}
+           onPress={() => this.props.navigation.navigate('Dashboard')}    
+         />
+       
+       </View>
     );
   }
 }
@@ -215,7 +199,8 @@ const DashboardStackNavigator = createStackNavigator(
     PaymentMethod: PaymentMethod,
     JobSettings: JobSettings,
     PaidNow: PaidNow,
-    HireOverview: HireOverview
+    HireOverview: HireOverview,
+    ViewCalendar: ViewCalendar
     
   },
   {
@@ -293,6 +278,8 @@ const AppDrawerNavigator = createDrawerNavigator({
 
 
 const AppSwitchNavigator = createSwitchNavigator({
+  Loading: { screen: Loading},
+   Login: { screen: Login},
   Welcome: { screen: WelcomeScreen },
   Dashboard: { screen: AppDrawerNavigator },
   Home: {screen: DashboardTabNavigator}
